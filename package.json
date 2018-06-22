@@ -1,0 +1,36 @@
+{
+  "name": "nuxt-firebase-auth",
+  "version": "1.0.0",
+  "description": "An example of using Nuxt with Firebase to auth users without a server",
+  "author": "james2doyle <james2doyle@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@nuxtjs/pwa": "^2.0.5",
+    "firebase": "^4.10.1",
+    "firebase-auth": "^0.1.2",
+    "nuxt": "^1.3.0",
+    "vuexfire": "^2.3.0",
+    "vuetify": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.18.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^4.0.2",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
+  }
+}
