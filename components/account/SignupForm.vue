@@ -1,7 +1,7 @@
 <template>
   <v-layout row>
     <v-flex xs6 offset-xs3>
-      <v-form ref="form" v-model="valid" lazy-validation>
+      <v-form name="apply" ref="form" v-model="valid" netlify>
         <v-card class="mt-5">
           <v-card-title>
             <div class="headline">Property</div>
@@ -112,8 +112,8 @@
                 required
               ></v-checkbox>
             <v-card-actions>
-              <v-btn @click="clear">clear</v-btn>
               <v-spacer></v-spacer>
+              <v-btn @click="clear">clear</v-btn>
               <v-btn
                 :disabled="!valid"
                 @click="signup"
@@ -152,10 +152,8 @@ export default {
       passwordMask: true,
       phone: '',
       phoneMask: 'phone',
-      checkbox: false,
-      checkboxRules: [
-        v => !!v || 'You must agree to continue!'
-      ],
+      property: '',
+      date: null,
       formError: '',
       valid: false,
       date: null,
@@ -165,7 +163,8 @@ export default {
       rentalLengthItems: ['6 Months', '12 Months', '18 Months', '24 Months', '36 Months'],
       currentLandlord: '',
       landlordPhone: '',
-      reasonMoving: ''
+      reasonMoving: '',
+      modal: false
     }
   },
   computed: {

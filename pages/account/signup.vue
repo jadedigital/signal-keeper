@@ -5,7 +5,7 @@
         <div class="hero">
           <div class="hero-body">
             <h1 class="title">Signal Management</h1>
-            <h2 class="subtitle">Sign up for an account</h2>
+            <h2 class="subtitle">Sign up for an account and apply to be a tenant</h2>
           </div>
         </div>
       </div>
