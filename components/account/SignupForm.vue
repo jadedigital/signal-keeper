@@ -80,7 +80,7 @@
                 ></v-text-field>
               </v-flex>
             </v-layout>
-            <div class="my-3">
+            <div class="my-5">
               <v-divider></v-divider>
             </div>
             <v-text-field
