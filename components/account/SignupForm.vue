@@ -1,6 +1,6 @@
 <template>
   <v-layout row>
-    <v-flex xs6 offset-xs3>
+    <v-flex>
       <v-form name="apply" ref="form" v-model="valid" netlify>
         <v-card class="mt-5">
           <v-card-title>
