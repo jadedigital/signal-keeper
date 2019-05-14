@@ -53,10 +53,6 @@
               :rules="nameRules"
               required
             ></v-text-field>
-            <v-text-field
-              v-model="CurrentAddress"
-              label="Current Address"
-            ></v-text-field>
             <v-layout>
               <v-flex
                 xs12
@@ -84,15 +80,13 @@
                 ></v-text-field>
               </v-flex>
             </v-layout>
-            <v-divider class="my-2"></v-divider>
+            <div class="my-3">
+              <v-divider></v-divider>
+            </div>
             <v-text-field
               v-model="secondName"
               label="Second Applicant's Name"
               :rules="nameRules"
-            ></v-text-field>
-            <v-text-field
-              v-model="secondCurrentAddress"
-              label="Current Address"
             ></v-text-field>
             <v-layout>
               <v-flex
@@ -119,14 +113,13 @@
                 ></v-text-field>
               </v-flex>
             </v-layout>
+            <div class="my-3">
+              <v-divider></v-divider>
+            </div>
             <v-text-field
               v-model="thirdName"
               label="Third Applicant's Name"
               :rules="nameRules"
-            ></v-text-field>
-            <v-text-field
-              v-model="thirdCurrentAddress"
-              label="Current Address"
             ></v-text-field>
             <v-layout>
               <v-flex
@@ -153,6 +146,9 @@
                 ></v-text-field>
               </v-flex>
             </v-layout>
+            <div class="my-3">
+              <v-divider></v-divider>
+            </div>
             <v-textarea
               v-model="dependants"
               auto-grow
@@ -290,8 +286,7 @@
           </v-card-title>
           <div class="ma-3">
             <v-checkbox
-              v-model="checkbox"
-              :rules="checkboxRules"
+              v-model="consent"
               label="YES, I certify that the information supplied above is true and correct, and that I give permission to the Landlord or agent for the Landlord to verify that the information provided above is true. Any false or misleading statements made in this application may be cause for immediate termination of tenancy."
               required
             ></v-checkbox>
@@ -371,7 +366,8 @@ export default {
       socialAssistance: '',
       pension: '',
       studentLoan: '',
-      otherIncomeContact: ''
+      otherIncomeContact: '',
+      consent: ''
     }
   },
   computed: {
