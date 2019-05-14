@@ -88,7 +88,9 @@ const createStore = () => {
       },
       userUpdate ({ state }, newData) {
         return firebase.database().ref(`accounts/${state.user.uid}`).update({
-          displayName: newData.displayName
+          displayName: newData.displayName,
+          permission: newData.premission,
+          status: newData.status
         })
       },
       userUpdateImage ({ state }, image) {

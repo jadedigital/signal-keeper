@@ -3,51 +3,13 @@
     <v-flex xs6 offset-xs3>
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-card class="mt-5">
-          <div class="ma-3">
-            <v-text-field
-              v-model="name"
-              label="Name"
-              :rules="nameRules"
-              required
-            ></v-text-field>
-            <v-text-field
-              v-model="email"
-              :rules="emailRules"
-              label="E-mail"
-              required
-            ></v-text-field>
-            <v-text-field
-              v-model="password"
-              :append-icon="passwordMask ? 'visibility' : 'visibility_off'"
-              :append-icon-cb="() => (passwordMask = !passwordMask)"
-              :type="passwordMask ? 'password' : 'text'"
-              :rules="passwordRules"
-              label="Enter your password"
-              min="6"
-              counter
-              required
-            ></v-text-field>
-            <v-text-field
-              v-model="phone"
-              name="phone"
-              :mask="phoneMask"
-              label="Phone Number"
-              single-line
-              prepend-icon="phone"
-            ></v-text-field>
-            <v-checkbox
-              v-model="checkbox"
-              :rules="checkboxRules"
-              label="Do you agree?"
-              required
-            ></v-checkbox>
-          </div>
-        </v-card>
-        <v-card class="mt-5">
+          <v-card-title>
+            <div class="headline">Property</div>
+          </v-card-title>
           <div class="ma-3">
             <v-text-field
               v-model="property"
-              label="Property"
+              label="Property applying for"
               required
             ></v-text-field>
             <v-dialog
@@ -73,6 +35,82 @@
                 <v-btn flat color="primary" @click="$refs.dialog.save(date)">OK</v-btn>
               </v-date-picker>
             </v-dialog>
+            <v-select
+              v-model="rentalLength"
+              :items="rentalLengthItems"
+              label="Rental Length"
+            ></v-select>
+          </div>
+        </v-card>
+        <v-card class="mt-5">
+          <v-card-title>
+            <div class="headline">Applicant Info</div>
+          </v-card-title>
+          <div class="ma-3">
+            <v-text-field
+              v-model="name"
+              label="Full Name"
+              :rules="nameRules"
+              required
+            ></v-text-field>
+            <v-text-field
+              v-model="currentAddress"
+              label="Current Address"
+              required
+            ></v-text-field>
+            <v-text-field
+              v-model="email"
+              :rules="emailRules"
+              label="E-mail"
+              required
+            ></v-text-field>
+            <v-text-field
+              v-model="phone"
+              name="phone"
+              :mask="phoneMask"
+              label="Phone Number"
+              single-line
+              prepend-icon="phone"
+            ></v-text-field>
+          </div>
+        </v-card>
+        <v-card class="mt-5">
+          <v-card-title>
+            <div class="headline">Rental History</div>
+          </v-card-title>
+          <div class="ma-3">
+            <v-text-field
+              v-model="currentLandlord"
+              label="Current Landlord"
+              required
+            ></v-text-field>
+            <v-text-field
+              v-model="landlordPhone"
+              label="Landlord Phone Number"
+              :mask="phoneMask"
+              single-line
+              required
+            ></v-text-field>
+            <v-textarea
+              v-model="reasonMoving"
+              auto-grow
+              box
+              label="Reason for moving"
+              rows="10"
+            ></v-textarea>
+          </div>
+        </v-card>
+        <v-card>
+          <v-card-title>
+            <div class="headline">Certification</div>
+          </v-card-title>
+          <div class="ma-3">
+            <v-checkbox
+                v-model="checkbox"
+                :rules="checkboxRules"
+                label="YES, I certify that the information supplied above is true and correct, and that I give permission to the Landlord or agent for the Landlord to verify that the information provided above is true. Any false or misleading statements made in this application may be cause for immediate termination of tenancy."
+                required
+              ></v-checkbox>
             <v-card-actions>
               <v-btn @click="clear">clear</v-btn>
               <v-spacer></v-spacer>
@@ -121,13 +159,21 @@ export default {
       formError: '',
       valid: false,
       date: null,
-      modal: false
+      modal: false,
+      currentAddress: '',
+      rentalLength: '',
+      rentalLengthItems: ['6 Months', '12 Months', '18 Months', '24 Months', '36 Months'],
+      currentLandlord: '',
+      landlordPhone: '',
+      reasonMoving: ''
     }
   },
   computed: {
     newData () {
       var data = {
         displayName: this.name,
+        premission: 'tenant',
+        status: 'pending',
         image: ''
       }
       return data
