@@ -9,7 +9,7 @@
           <div class="ma-3">
             <v-text-field
               v-model="property"
-              label="Property applying for"
+              label="Rental Property Address"
               required
             ></v-text-field>
             <v-dialog
@@ -113,7 +113,7 @@
                 ></v-text-field>
               </v-flex>
             </v-layout>
-            <div class="my-3">
+            <div class="my-5">
               <v-divider></v-divider>
             </div>
             <v-text-field
@@ -146,7 +146,7 @@
                 ></v-text-field>
               </v-flex>
             </v-layout>
-            <div class="my-3">
+            <div class="my-5">
               <v-divider></v-divider>
             </div>
             <v-textarea
@@ -201,6 +201,9 @@
               label="Reason for moving"
               rows="10"
             ></v-textarea>
+            <div class="my-5">
+              <v-divider></v-divider>
+            </div>
             <v-text-field
               v-model="previousAddress"
               label="Previous Address 1"
@@ -215,6 +218,9 @@
               :mask="phoneMask"
               single-line
             ></v-text-field>
+            <div class="my-5">
+              <v-divider></v-divider>
+            </div>
             <v-text-field
               v-model="previousAddress2"
               label="Previous Address 2"
@@ -280,7 +286,7 @@
             ></v-textarea>
           </div>
         </v-card>
-        <v-card>
+        <v-card class="mt-5">
           <v-card-title>
             <div class="headline">Certification</div>
           </v-card-title>
@@ -295,7 +301,7 @@
               <v-btn @click="clear">clear</v-btn>
               <v-btn
                 :disabled="!valid"
-                @click="signup"
+                type="submit"
               >
                 submit
               </v-btn>

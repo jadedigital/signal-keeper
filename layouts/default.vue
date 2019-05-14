@@ -35,7 +35,6 @@
         <v-list-tile
           router
           :to="'/maintenance'"
-          v-if="user"
           exact
         >
           <v-list-tile-action>

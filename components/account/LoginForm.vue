@@ -14,7 +14,7 @@
               <v-text-field
                 v-model="password"
                 :append-icon="passwordMask ? 'visibility' : 'visibility_off'"
-                :append-icon-cb="() => (passwordMask = !passwordMask)"
+                @click:append="() => (passwordMask = !passwordMask)"
                 :type="passwordMask ? 'password' : 'text'"
                 label="Enter your password"
                 counter
