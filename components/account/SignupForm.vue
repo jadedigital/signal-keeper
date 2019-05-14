@@ -53,20 +53,33 @@
               :rules="nameRules"
               required
             ></v-text-field>
-            <v-text-field
-              v-model="email"
-              :rules="emailRules"
-              label="E-mail"
-              required
-            ></v-text-field>
-            <v-text-field
-              v-model="phone"
-              name="phone"
-              :mask="phoneMask"
-              label="Phone Number"
-              single-line
-              prepend-icon="phone"
-            ></v-text-field>
+            <v-layout>
+              <v-flex
+                xs12
+                md6
+              >
+                <v-text-field
+                  v-model="email"
+                  :rules="emailRules"
+                  label="E-mail"
+                  required
+                ></v-text-field>
+              </v-flex>
+              <v-flex
+                xs12
+                md6
+              >
+                <v-text-field
+                  v-model="phone"
+                  name="phone"
+                  :mask="phoneMask"
+                  label="Phone Number"
+                  single-line
+                  prepend-icon="phone"
+                  required
+                ></v-text-field>
+              </v-flex>
+            </v-layout>
             <v-text-field
               v-model="secondName"
               label="Second Applicant's Name"
