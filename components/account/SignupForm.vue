@@ -53,6 +53,10 @@
               :rules="nameRules"
               required
             ></v-text-field>
+            <v-text-field
+              v-model="CurrentAddress"
+              label="Current Address"
+            ></v-text-field>
             <v-layout>
               <v-flex
                 xs12
