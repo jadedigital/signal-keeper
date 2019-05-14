@@ -25,7 +25,6 @@ import SignupForm from '~/components/account/SignupForm.vue'
 import { mapState } from 'vuex'
 
 export default {
-  middleware: 'anonymous',
   components: {
     SignupForm
   },

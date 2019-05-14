@@ -37,21 +37,14 @@ module.exports = {
     // middleware: 'check-auth'
   },
   plugins: [
-    '~/plugins/vuetify.js',
-    {
-      src: '~/plugins/auth',
-      ssr: false
-    }
+    '~/plugins/vuetify.js'
   ],
   /*
   ** Build configuration
   */
   build: {
     vendor: [
-      '~/plugins/vuetify.js',
-      'firebase',
-      'firebase-auth',
-      'vuexfire'
+      '~/plugins/vuetify.js'
     ],
     // put CSS in files instead of JS bundles
     extractCSS: true,

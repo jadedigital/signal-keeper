@@ -156,15 +156,13 @@ export default {
       date: null,
       formError: '',
       valid: false,
-      date: null,
       modal: false,
       currentAddress: '',
       rentalLength: '',
       rentalLengthItems: ['6 Months', '12 Months', '18 Months', '24 Months', '36 Months'],
       currentLandlord: '',
       landlordPhone: '',
-      reasonMoving: '',
-      modal: false
+      reasonMoving: ''
     }
   },
   computed: {
@@ -187,27 +185,8 @@ export default {
   methods: {
     signup () {
       this.formError = ''
-      this.$store.dispatch('userCreate', {
-        email: this.email,
-        password: this.password
-      })
-        .then(() => {
-          this.updateField()
-        })
-        .catch((error) => {
-          console.log(error)
-          this.formError = error.message
-        })
     },
     updateField () {
-      this.$store.dispatch('userUpdate', this.newData)
-        .then(() => {
-          this.$router.push('/account')
-        })
-        .catch((err) => {
-          this.formError = 'Error saving display name'
-          console.error(err)
-        })
     },
     clear () {
       this.$refs.form.reset()

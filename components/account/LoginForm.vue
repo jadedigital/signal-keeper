@@ -68,17 +68,6 @@ export default {
   methods: {
     submit () {
       this.formError = ''
-      this.$store.dispatch('userLogin', {
-        email: this.email,
-        password: this.password
-      })
-        .then(() => {
-          this.$router.push('/account')
-        })
-        .catch((error) => {
-          console.log(error)
-          this.formError = error.message
-        })
     },
     clear () {
       this.$refs.form.reset()

@@ -25,7 +25,6 @@ import LoginForm from '~/components/account/LoginForm.vue'
 import { mapState } from 'vuex'
 
 export default {
-  middleware: 'anonymous',
   components: {
     LoginForm
   },

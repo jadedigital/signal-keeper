@@ -21,7 +21,6 @@
 
 <script>
 import { mapState } from 'vuex'
-import firebase from 'firebase'
 
 export default {
   computed: mapState([
@@ -50,34 +49,9 @@ export default {
     updateField (key) {
       this.resetFormMessages()
       clearTimeout(this.debounceTimer)
-      this.debounceTimer = setTimeout(() => {
-        console.info('update field', key)
-        this.$store.dispatch('userUpdate', this.newData)
-          .then(() => {
-            this.formSuccess = 'Successfully updated your account details'
-          })
-          .catch((err) => {
-            this.formError = 'Error saving the profile changes'
-            console.error(err)
-          })
-      }, 500)
     },
     updateProfileImage () {
       this.resetFormMessages()
-      const file = this.$refs.fileInput.files[0]
-      const ref = firebase.storage().ref(`accounts/profile/${this.user.uid}`)
-      ref.put(file).then((snapshot) => {
-        return this.$store.dispatch('userUpdateImage', snapshot.downloadURL)
-      })
-        .then(() => {
-          this.formSuccess = 'Successfully uploaded a new profile image'
-          // reset the form input
-          this.$refs.fileInput.value = null
-        })
-        .catch((err) => {
-          this.formError = 'Error uploading new profile image'
-          console.error(err)
-        })
     }
   }
 }
