@@ -332,7 +332,7 @@ export default {
       supervisorName: '',
       supervisorPhone: '',
       salary: '',
-      socialAssistance,
+      socialAssistance: '',
       pension: '',
       studentLoan: '',
       otherIncomeContact: ''
