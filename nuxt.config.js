@@ -3,11 +3,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Nuxt Firebase Auth',
+    title: 'Signal Property Management Portal',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'An example of using Nuxt with Firebase to auth users without a server' }
+      { hid: 'description', name: 'description', content: 'This site manages tenant applications, rental agreements, maintenance requests' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
