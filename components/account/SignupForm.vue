@@ -80,56 +80,75 @@
                 ></v-text-field>
               </v-flex>
             </v-layout>
+            <v-divider class="my-2"></v-divider>
             <v-text-field
               v-model="secondName"
               label="Second Applicant's Name"
               :rules="nameRules"
-              required
             ></v-text-field>
             <v-text-field
               v-model="secondCurrentAddress"
               label="Current Address"
-              required
             ></v-text-field>
-            <v-text-field
-              v-model="secondEmail"
-              :rules="emailRules"
-              label="E-mail"
-              required
-            ></v-text-field>
-            <v-text-field
-              v-model="secondPhone"
-              name="phone"
-              :mask="phoneMask"
-              label="Phone Number"
-              single-line
-              prepend-icon="phone"
-            ></v-text-field>
+            <v-layout>
+              <v-flex
+                xs12
+                md6
+              >
+                <v-text-field
+                  v-model="secondEmail"
+                  :rules="emailRules"
+                  label="E-mail"
+                ></v-text-field>
+              </v-flex>
+              <v-flex
+                xs12
+                md6
+              >
+                <v-text-field
+                  v-model="secondPhone"
+                  name="phone"
+                  :mask="phoneMask"
+                  label="Phone Number"
+                  single-line
+                  prepend-icon="phone"
+                ></v-text-field>
+              </v-flex>
+            </v-layout>
             <v-text-field
               v-model="thirdName"
               label="Third Applicant's Name"
               :rules="nameRules"
-              required
             ></v-text-field>
             <v-text-field
               v-model="thirdCurrentAddress"
               label="Current Address"
-              required
             ></v-text-field>
-            <v-text-field
-              v-model="thirdEmail"
-              :rules="emailRules"
-              label="E-mail"
-              required
-            ></v-text-field>
-            <v-text-field
-              v-model="thirdPhone"
-              name="phone"
-              :mask="phoneMask"
-              label="Phone Number"
-              single-line
-              prepend-icon="phone"
-            ></v-text-field>
+            <v-layout>
+              <v-flex
+                xs12
+                md6
+              >
+                <v-text-field
+                  v-model="thirdEmail"
+                  :rules="emailRules"
+                  label="E-mail"
+                ></v-text-field>
+              </v-flex>
+              <v-flex
+                xs12
+                md6
+              >
+                <v-text-field
+                  v-model="thirdPhone"
+                  name="phone"
+                  :mask="phoneMask"
+                  label="Phone Number"
+                  single-line
+                  prepend-icon="phone"
+                ></v-text-field>
+              </v-flex>
+            </v-layout>
             <v-textarea
               v-model="dependants"
               auto-grow
