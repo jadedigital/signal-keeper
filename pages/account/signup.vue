@@ -1,14 +1,7 @@
 <template>
   <div>
-    <div class="columns">
-      <div class="one-half column centered">
-        <div class="hero">
-          <div class="hero-body">
-            <h1 class="title">Signal Management</h1>
-            <h2 class="subtitle">Sign up for an account and apply to be a tenant</h2>
-          </div>
-        </div>
-      </div>
+    <div class="text-xs-center">
+      <img src="/signal-white.png" alt="Vuetify.js" class="my-5" height="60" />
     </div>
     <div class="columns">
       <div class="one-half column centered">
