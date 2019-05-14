@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="text-xs-center">
-      <img src="/signal-white.png" alt="Vuetify.js" class="my-5" height="60" />
+      <img src="/signal-white.png" alt="Vuetify.js" class="mt-5" height="60" />
     </div>
     <div class="columns">
       <div class="one-half column centered">
