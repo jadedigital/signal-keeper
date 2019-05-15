@@ -10,7 +10,7 @@
             <v-text-field
               v-model="property"
               label="Rental Property Address"
-              name="address"
+              name="propertyAddress"
               required
             ></v-text-field>
             <v-dialog
@@ -25,6 +25,7 @@
               <v-text-field
                 slot="activator"
                 v-model="date"
+                name="moveInDate"
                 label="Requested Move In Date"
                 prepend-icon="event"
                 readonly
@@ -38,6 +39,7 @@
             </v-dialog>
             <v-select
               v-model="rentalLength"
+              name="rentalTermLength"
               :items="rentalLengthItems"
               label="Rental Term Length"
             ></v-select>
@@ -50,6 +52,7 @@
           <div class="ma-3">
             <v-text-field
               v-model="name"
+              name="applicantName"
               label="Applicant's Name"
               :rules="nameRules"
               required
@@ -61,6 +64,7 @@
               >
                 <v-text-field
                   v-model="email"
+                  name="applicantEmail"
                   :rules="emailRules"
                   label="E-mail"
                   required
@@ -72,7 +76,7 @@
               >
                 <v-text-field
                   v-model="phone"
-                  name="phone"
+                  name="applicantPhone"
                   :mask="phoneMask"
                   label="Phone Number"
                   single-line
@@ -86,6 +90,7 @@
             </div>
             <v-text-field
               v-model="secondName"
+              name="applicantTwoName"
               label="Second Applicant's Name"
             ></v-text-field>
             <v-layout>
@@ -95,6 +100,7 @@
               >
                 <v-text-field
                   v-model="secondEmail"
+                  name="applicantTwoEmail"
                   label="E-mail"
                 ></v-text-field>
               </v-flex>
@@ -104,7 +110,7 @@
               >
                 <v-text-field
                   v-model="secondPhone"
-                  name="phone"
+                  name="applicantTwoPhone"
                   :mask="phoneMask"
                   label="Phone Number"
                   single-line
@@ -117,6 +123,7 @@
             </div>
             <v-text-field
               v-model="thirdName"
+              name="applicantThreeName"
               label="Third Applicant's Name"
             ></v-text-field>
             <v-layout>
@@ -126,6 +133,7 @@
               >
                 <v-text-field
                   v-model="thirdEmail"
+                  name="applicantThreeEmail"
                   label="E-mail"
                 ></v-text-field>
               </v-flex>
@@ -135,7 +143,7 @@
               >
                 <v-text-field
                   v-model="thirdPhone"
-                  name="phone"
+                  name="applicantThreePhone"
                   :mask="phoneMask"
                   label="Phone Number"
                   single-line
@@ -148,12 +156,13 @@
             </div>
             <v-textarea
               v-model="dependants"
+              name="dependants"
               auto-grow
               box
               label="Names of Dependants"
               rows="10"
             ></v-textarea>
-            <v-radio-group v-model="pets" :mandatory="true">
+            <v-radio-group v-model="pets" name="pets" :mandatory="true">
               <template v-slot:label>
                 <div>Do you have any <strong>pets?</strong></div>
               </template>
@@ -162,6 +171,7 @@
             </v-radio-group>
             <v-textarea
               v-model="petDescription"
+              name="petDescription"
               auto-grow
               box
               label="Please describe type and number of pets"
@@ -176,16 +186,19 @@
           <div class="ma-3">
             <v-text-field
               v-model="currentAddress"
+              name="currentAddress"
               label="Current Address"
               required
             ></v-text-field>
             <v-text-field
               v-model="currentLandlord"
+              name="currentLandlord"
               label="Current Landlord"
               required
             ></v-text-field>
             <v-text-field
               v-model="landlordPhone"
+              name="landlordPhone"
               label="Landlord Phone Number"
               :mask="phoneMask"
               single-line
@@ -193,6 +206,7 @@
             ></v-text-field>
             <v-textarea
               v-model="reasonMoving"
+              name="reasonMoving"
               auto-grow
               box
               label="Reason for moving"
@@ -203,14 +217,17 @@
             </div>
             <v-text-field
               v-model="previousAddress"
+              name="previousAddress"
               label="Previous Address 1"
             ></v-text-field>
             <v-text-field
               v-model="previousLandlord"
+              name="previousLandlord"
               label="Previous Landlord 1"
             ></v-text-field>
             <v-text-field
               v-model="previousLandlordPhone"
+              name="previousLandlordPhone"
               label="Previous Landlord Phone Number 1"
               :mask="phoneMask"
               single-line
@@ -220,14 +237,17 @@
             </div>
             <v-text-field
               v-model="previousAddress2"
+              name="previousAddressTwo"
               label="Previous Address 2"
             ></v-text-field>
             <v-text-field
-              v-model="previousLandlord"
+              v-model="previousLandlord2"
+              name="previousLandlordTwo"
               label="Previous Landlord 2"
             ></v-text-field>
             <v-text-field
               v-model="previousLandlordPhone2"
+              name="previousLandlordTwoPhone"
               label="Previous Landlord Phone Number 2"
               :mask="phoneMask"
               single-line
@@ -241,26 +261,32 @@
           <div class="ma-3">
             <v-text-field
               v-model="employer"
+              name="employer"
               label="Employer"
             ></v-text-field>
             <v-text-field
               v-model="position"
+              name="position"
               label="Position"
             ></v-text-field>
             <v-text-field
               v-model="dateHired"
+              name="dateHired"
               label="Date Hired"
             ></v-text-field>
             <v-text-field
               v-model="supervisorName"
+              name="supervisorName"
               label="Supervisor's Name"
             ></v-text-field>
             <v-text-field
               v-model="supervisorPhone"
+              name="supervisorPhone"
               label="Supervisor's Phone"
             ></v-text-field>
             <v-text-field
               v-model="salary"
+              name="salary"
               label="Salary"
             ></v-text-field>
           </div>
@@ -271,11 +297,12 @@
           </v-card-title>
           <div class="ma-3">
             <div>Do you receive income from any of the following sources:</div>
-            <v-checkbox v-model="studentLoan" label="Student Loans" value="studentLoan"></v-checkbox>
-            <v-checkbox v-model="pension" label="Pension Benefits" value="pension"></v-checkbox>
-            <v-checkbox v-model="socialAssistance" label="Social Assistance" value="socialAssistance"></v-checkbox>
+            <v-checkbox v-model="studentLoan" name="studentLoan" label="Student Loans" value="studentLoan"></v-checkbox>
+            <v-checkbox v-model="pension" name="pension" label="Pension Benefits" value="pension"></v-checkbox>
+            <v-checkbox v-model="socialAssistance" name="socialAssistance" label="Social Assistance" value="socialAssistance"></v-checkbox>
             <v-textarea
               v-model="otherIncomeContact"
+              name="otherIncomeContact"
               auto-grow
               box
               label="Please provide contact persons who could verify the amount of income you receive"
@@ -290,6 +317,7 @@
           <div class="ma-3">
             <v-checkbox
               v-model="consent"
+              name="consent"
               label="YES, I certify that the information supplied above is true and correct, and that I give permission to the Landlord or agent for the Landlord to verify that the information provided above is true. Any false or misleading statements made in this application may be cause for immediate termination of tenancy."
               required
             ></v-checkbox>
