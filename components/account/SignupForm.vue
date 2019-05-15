@@ -1,7 +1,7 @@
 <template>
   <v-layout row>
     <v-flex>
-      <v-form name="rentApplication" ref="form" v-model="valid" method="POST" data-netlify="true">
+      <v-form name="rentApplication" ref="form" v-model="valid" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
         <v-card class="mt-5">
           <v-card-title>
             <div class="headline">Property</div>
