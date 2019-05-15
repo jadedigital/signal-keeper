@@ -1,7 +1,7 @@
 <template>
   <v-layout row>
     <v-flex>
-      <v-form name="apply" ref="form" v-model="valid" netlify>
+      <v-form name="apply" ref="form" v-model="valid" method="POST" data-netlify="true">
         <v-card class="mt-5">
           <v-card-title>
             <div class="headline">Property</div>
@@ -86,7 +86,6 @@
             <v-text-field
               v-model="secondName"
               label="Second Applicant's Name"
-              :rules="nameRules"
             ></v-text-field>
             <v-layout>
               <v-flex
@@ -95,7 +94,6 @@
               >
                 <v-text-field
                   v-model="secondEmail"
-                  :rules="emailRules"
                   label="E-mail"
                 ></v-text-field>
               </v-flex>
@@ -119,7 +117,6 @@
             <v-text-field
               v-model="thirdName"
               label="Third Applicant's Name"
-              :rules="nameRules"
             ></v-text-field>
             <v-layout>
               <v-flex
@@ -128,7 +125,6 @@
               >
                 <v-text-field
                   v-model="thirdEmail"
-                  :rules="emailRules"
                   label="E-mail"
                 ></v-text-field>
               </v-flex>
