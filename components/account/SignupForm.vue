@@ -1,7 +1,7 @@
 <template>
   <v-layout row>
     <v-flex>
-      <v-form name="apply" ref="form" v-model="valid" method="POST" data-netlify="true">
+      <v-form name="rentApplication" ref="form" v-model="valid" method="POST" data-netlify="true">
         <v-card class="mt-5">
           <v-card-title>
             <div class="headline">Property</div>
@@ -51,7 +51,7 @@
           </v-card-title>
           <div class="ma-3">
             <v-text-field
-              v-model="name"
+              v-model="applicantName"
               name="applicantName"
               label="Applicant's Name"
               :rules="nameRules"
@@ -344,7 +344,7 @@ export default {
   name: 'SignupForm',
   data () {
     return {
-      name: '',
+      applicantName: '',
       secondName: '',
       thirdName: '',
       nameRules: [
