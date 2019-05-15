@@ -10,6 +10,7 @@
             <v-text-field
               v-model="property"
               label="Rental Property Address"
+              name="address"
               required
             ></v-text-field>
             <v-dialog
