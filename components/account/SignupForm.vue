@@ -5,6 +5,7 @@
         <p class="hidden">
           <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
         </p>
+        <input type="hidden" name="form-name" value="rentApplication" />
         <v-card class="mt-5">
           <v-card-title>
             <div class="headline">Property</div>
