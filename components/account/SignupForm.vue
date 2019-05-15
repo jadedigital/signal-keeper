@@ -2,6 +2,9 @@
   <v-layout row>
     <v-flex>
       <v-form name="rentApplication" ref="form" v-model="valid" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <p class="hidden">
+          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </p>
         <v-card class="mt-5">
           <v-card-title>
             <div class="headline">Property</div>
@@ -430,3 +433,9 @@ export default {
   }
 }
 </script>
+
+<style lang="css" scoped>
+  .hiddne {
+    visibility: hidden;
+  }
+</style>
