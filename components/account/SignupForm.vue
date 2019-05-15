@@ -435,7 +435,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
-  .hiddne {
+  .hidden {
     visibility: hidden;
   }
 </style>
