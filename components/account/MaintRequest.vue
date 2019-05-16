@@ -31,12 +31,15 @@
               prepend-icon="phone"
               required
             ></v-text-field>
-            <v-text-field
+            <v-textarea
               v-model="maintenanceIssue"
-              label="Maintenance Issue"
+              label="Please describe maintnenance issue in detail"
               name="maintenanceIssue"
+              auto-grow
+              box
+              rows="10"
               required
-            ></v-text-field>
+            ></v-textarea>
             <v-select
               v-model="priority"
               name="priority"
