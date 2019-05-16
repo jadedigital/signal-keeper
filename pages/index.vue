@@ -17,8 +17,8 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" nuxt to="/apply">Apply to rent a property</v-btn>
-          <v-btn color="primary" nuxt to="/account/login">Log In</v-btn>
+          <v-btn color="primary" nuxt to="/apply">Apply To Rent A Property</v-btn>
+          <v-btn color="primary" nuxt to="/maintenance">Maintenance Request</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
