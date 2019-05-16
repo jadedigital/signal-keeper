@@ -45,7 +45,7 @@
               name="priority"
               :items="priorityItems"
               label="Priority"
-              :value="priority"
+              return-masked-value
             ></v-select>
             <v-card-actions>
               <v-spacer></v-spacer>
