@@ -63,7 +63,7 @@
 <script>
 
 export default {
-  name: 'SignupForm',
+  name: 'MaintRequest',
   data () {
     return {
       property: '',
