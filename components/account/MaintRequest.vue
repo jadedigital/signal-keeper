@@ -33,7 +33,7 @@
             ></v-text-field>
             <v-textarea
               v-model="maintenanceIssue"
-              label="Please describe maintnenance issue in detail"
+              label="Please describe maintenance issue in detail"
               name="maintenanceIssue"
               auto-grow
               box
