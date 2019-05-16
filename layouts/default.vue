@@ -85,7 +85,7 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar color="secondary" fixed app :clipped-left="clipped">
+    <v-toolbar class="signal-toolbar" color="secondary" flat fixed app :clipped-left="clipped">
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-btn
         icon
@@ -147,5 +147,9 @@ export default {
 }
 .flex-table-item-primary {
   flex: 3;
+}
+
+.signal-toolbar {
+  border-bottom: solid 1px #fff!important
 }
 </style>
