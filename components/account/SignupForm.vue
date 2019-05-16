@@ -301,9 +301,9 @@
           </v-card-title>
           <div class="ma-3">
             <div>Do you receive income from any of the following sources:</div>
-            <v-checkbox v-model="studentLoan" name="studentLoan" label="Student Loans" value="studentLoan"></v-checkbox>
-            <v-checkbox v-model="pension" name="pension" label="Pension Benefits" value="pension"></v-checkbox>
-            <v-checkbox v-model="socialAssistance" name="socialAssistance" label="Social Assistance" value="socialAssistance"></v-checkbox>
+            <v-checkbox v-model="studentLoan" name="studentLoan" label="Student Loans" value="yes"></v-checkbox>
+            <v-checkbox v-model="pension" name="pension" label="Pension Benefits" value="yes"></v-checkbox>
+            <v-checkbox v-model="socialAssistance" name="socialAssistance" label="Social Assistance" value="yes"></v-checkbox>
             <v-textarea
               v-model="otherIncomeContact"
               name="otherIncomeContact"
@@ -321,6 +321,7 @@
           <div class="ma-3">
             <v-checkbox
               v-model="consent"
+              value="yes"
               name="consent"
               label="YES, I certify that the information supplied above is true and correct, and that I give permission to the Landlord or agent for the Landlord to verify that the information provided above is true. Any false or misleading statements made in this application may be cause for immediate termination of tenancy."
               required
