@@ -18,6 +18,16 @@
 <script>
 
 export default {
+  head () {
+    return {
+      script: [
+        {
+          type: 'text/javascript',
+          src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' 
+        }
+      ]
+    }
+  },
   name: 'IdentityForm',
   data () {
     return {
