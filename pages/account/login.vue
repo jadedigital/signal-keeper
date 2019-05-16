@@ -13,7 +13,7 @@
     <div class="columns">
       <div class="one-half column centered">
         <div class="four-fifths">
-          <LoginForm />
+          <IdentityForm />
         </div>
       </div>
     </div>
@@ -21,12 +21,12 @@
 </template>
 
 <script>
-import LoginForm from '~/components/account/LoginForm.vue'
+import IdentityForm from '~/components/account/IdentityForm.vue'
 import { mapState } from 'vuex'
 
 export default {
   components: {
-    LoginForm
+    IdentityForm
   },
   watch: {
     // firebase is sometimes slow so we need to account for
