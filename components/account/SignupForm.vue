@@ -46,7 +46,7 @@
               name="rentalTermLength"
               :items="rentalLengthItems"
               label="Rental Term Length"
-              :value="rentalLength"
+              :item-value="rentalLength"
             ></v-select>
           </div>
         </v-card>
