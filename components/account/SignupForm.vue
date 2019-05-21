@@ -43,11 +43,10 @@
             </v-dialog>
             <v-select
               v-model="rentalLength"
-              name="rentalTermLength"
               :items="rentalLengthItems"
               label="Rental Term Length"
-              :item-value="rentalLength"
             ></v-select>
+            <input class="hidden" type="text" name="rentalTermLength" :value="rentalLength" />
           </div>
         </v-card>
         <v-card class="mt-5">
