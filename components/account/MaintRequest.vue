@@ -42,12 +42,11 @@
             ></v-textarea>
             <v-select
               v-model="priority"
-              name="priority"
               :items="priorityItems"
               label="Priority"
               :item-value="priority"
             ></v-select>
-            <input class="hidden" type="text" name="hpriority" :value="priority" />
+            <input class="hidden" type="text" name="priority" :value="priority" />
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn @click="clear">clear</v-btn>
