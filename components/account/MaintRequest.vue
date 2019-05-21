@@ -47,7 +47,7 @@
               label="Priority"
               :item-value="priority"
             ></v-select>
-            <v-input class="hidden" :value="priority" />
+            <input class="hidden" :value="priority" />
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn @click="clear">clear</v-btn>
