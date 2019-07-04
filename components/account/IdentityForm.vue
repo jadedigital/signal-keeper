@@ -22,6 +22,11 @@
 import netlifyIdentity from "netlify-identity-widget"
 import { mapGetters, mapActions } from "vuex"
 
+netlifyIdentity.init({
+  APIUrl: "https://app.signalmanagement.ca/.netlify/identity",
+  logo: true // you can try false and see what happens
+});
+
 export default {
   name: 'IdentityForm',
   computed: {
