@@ -23,6 +23,9 @@
 <script>
 import IdentityForm from '~/components/account/IdentityForm.vue'
 import { mapState } from 'vuex'
+import netlifyIdentity from "netlify-identity-widget"
+
+netlifyIdentity.init()
 
 export default {
   components: {

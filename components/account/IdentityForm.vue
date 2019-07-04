@@ -24,10 +24,6 @@
 import netlifyIdentity from "netlify-identity-widget"
 import { mapGetters, mapActions } from "vuex"
 
-netlifyIdentity.init({
-  container: '#netlify-modal'
-})
-
 export default {
   name: 'IdentityForm',
   computed: {
