@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      user: localStorage.getItem('user')
+      user: null
     },
     getters: {
       getUserStatus: state => !!state.user,
@@ -18,12 +18,10 @@ const createStore = () => {
       setUser: (state, currentUser) => {
         if (!currentUser) {
           state.user = null
-          localStorage.removeItem('user')
           return
         }
         let theUser = JSON.stringify(currentUser)
         state.user = theUser
-        localStorage.setItem('user', theUser)
       }
     }
   })
