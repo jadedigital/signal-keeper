@@ -25,8 +25,7 @@ import netlifyIdentity from "netlify-identity-widget"
 import { mapGetters, mapActions } from "vuex"
 
 netlifyIdentity.init({
-  container: '#netlify-modal',
-  APIUrl: "https://app.signalmanagement.ca/.netlify/identity"
+  container: '#netlify-modal'
 })
 
 export default {
