@@ -46,7 +46,7 @@ export default {
     }),
     triggerNetlifyIdentityAction(action) {
       if (action == "login" || action == "signup") {
-        netlifyIdentity.open(action);
+        netlifyIdentity.open(action)
         netlifyIdentity.on(action, user => {
           this.currentUser = {
             username: user.user_metadata.full_name,
@@ -58,16 +58,18 @@ export default {
           };
           this.updateUser({
             currentUser: this.currentUser
-          });
-          netlifyIdentity.close();
-        });
+          })
+          netlifyIdentity.close()
+        })
+        console.log(this.currentUser)
+        console.log(this.user)
       } else if (action == "logout") {
-        this.currentUser = null;
+        this.currentUser = null
         this.updateUser({
           currentUser: this.currentUser
-        });
-        netlifyIdentity.logout();
-        this.$router.push({ name: "Home" });
+        })
+        netlifyIdentity.logout()
+        this.$router.push('/account')
       }
     }
   }
