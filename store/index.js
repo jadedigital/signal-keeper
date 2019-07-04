@@ -3,24 +3,27 @@ import Vuex from 'vuex'
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      user: null,
-      account: null
+      user: window.localStorage.getItem('user')
     },
     getters: {
-      isAuthenticated (state) {
-        return !!state.user
-      }
+      getUserStatus: state => !!state.user,
+      getUser: state => JSON.parse(state.user)
     },
     actions: {
-      resetUser ({
-        state
-      }) {
-        state.user = null
+      updateUser: ({ commit }, payload) => {
+        commit('setUser', payload.currentUser)
       }
     },
     mutations: {
-      setUser (state, user) {
-        state.user = user
+      setUser: (state, currentUser) => {
+        if (!currentUser) {
+          state.user = null
+          window.localStorage.removeItem('user')
+          return
+        }
+        let theUser = JSON.stringify(currentUser)
+        state.user = theUser
+        window.localStorage.setItem('user', theUser)
       }
     }
   })
