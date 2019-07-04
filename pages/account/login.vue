@@ -27,7 +27,7 @@ import netlifyIdentity from "netlify-identity-widget"
 
 if (process.browser) {
   netlifyIdentity.init({
-    APIUrl: 'https://app.signalmanagement.ca/.netlify/functions/identity'
+    APIUrl: 'https://app.signalmanagement.ca/.netlify/identity'
   })
 }
 
