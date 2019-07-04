@@ -26,7 +26,9 @@ import { mapState } from 'vuex'
 import netlifyIdentity from "netlify-identity-widget"
 
 if (process.browser) {
-  netlifyIdentity.init()
+  netlifyIdentity.init({
+    APIUrl: 'https://app.signalmanagement.ca/.netlify/functions/identity'
+  })
 }
 
 export default {
