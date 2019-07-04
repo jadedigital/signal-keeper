@@ -1,18 +1,20 @@
 <template>
   <v-layout row>
     <v-flex>
-      <div v-if="isLoggedIn">
-        <p>Hello {{ username }}</p>
-        <p>
-          <button @click="triggerNetlifyIdentityAction('logout')">Log Out</button>
-        </p>
-      </div>  
-      <div v-else>
-        <p>You are not logged in.</p>
-        <p>
-          <button @click="triggerNetlifyIdentityAction('login')">Log In</button>
-          <button @click="triggerNetlifyIdentityAction('signup')">Sign Up</button>
-        </p>
+      <div id=netlify-modal>
+        <div v-if="isLoggedIn">
+          <p>Hello {{ username }}</p>
+          <p>
+            <button @click="triggerNetlifyIdentityAction('logout')">Log Out</button>
+          </p>
+        </div>  
+        <div v-else>
+          <p>You are not logged in.</p>
+          <p>
+            <button @click="triggerNetlifyIdentityAction('login')">Log In</button>
+            <button @click="triggerNetlifyIdentityAction('signup')">Sign Up</button>
+          </p>
+        </div>
       </div>
     </v-flex>
   </v-layout>
@@ -23,6 +25,7 @@ import netlifyIdentity from "netlify-identity-widget"
 import { mapGetters, mapActions } from "vuex"
 
 netlifyIdentity.init({
+  container: '#netlify-modal',
   APIUrl: "https://app.signalmanagement.ca/.netlify/identity"
 })
 
