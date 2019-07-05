@@ -43,7 +43,6 @@ if (process.browser) {
 }
 
 export default {
-  name: 'IdentityForm',
   computed: {
     ...mapGetters({
       isLoggedIn: 'getUserStatus',
@@ -55,13 +54,17 @@ export default {
   },
   data () {
     return {
-      currentUser: null
+      currentUser: null,
+      editing: false
     }
   },
   methods: {
     ...mapActions({
       updateUser: 'updateUser'
     }),
+    toggleEditForm () {
+      this.editing = !this.editing
+    },
     triggerNetlifyIdentityAction (action) {
       if (action === 'login') {
         netlifyIdentity.open(action)
@@ -90,7 +93,7 @@ export default {
         })
         localStorage.removeItem('user')
         netlifyIdentity.logout()
-        this.$router.push('/account')
+        this.$router.push('/')
       }
     }
   }
