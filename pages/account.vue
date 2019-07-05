@@ -11,6 +11,14 @@
               </div>
             </div>
           </div>
+          <div class="columns" v-else>
+            <div class="one-half column centered">
+              <div class="blankslate blankslate-clean-background">
+                <h3>Hi</h3>
+                <p>Please log in to access your account details</p>
+              </div>
+            </div>
+          </div>
           <div class="columns">
             <div class="one-half column centered" v-if="editing" v-cloak>
               <p>Edit Your Profile</p>
@@ -18,10 +26,10 @@
             </div>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <button type="button" class="btn btn-primary mr-2" v-on:click="toggleEditForm">
+              <v-btn v-if="isLoggedIn" type="button" color="primary" v-on:click="toggleEditForm">
                 <span v-if="editing">Done</span>
                 <span v-else>Edit</span>
-              </button>
+              </v-btn>
               <v-btn color="primary" v-if="isLoggedIn" @click="triggerNetlifyIdentityAction('logout')">Log Out</v-btn>
               <v-btn color="primary" v-if="!isLoggedIn" @click="triggerNetlifyIdentityAction('login')">Log In</v-btn>
             </v-card-actions>
