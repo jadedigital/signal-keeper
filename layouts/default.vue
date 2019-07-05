@@ -47,7 +47,6 @@
         <v-list-tile
           router
           :to="'/account'"
-          v-if="user"
           exact
         >
           <v-list-tile-action>
