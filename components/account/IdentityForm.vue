@@ -21,18 +21,18 @@
 </template>
 
 <script>
-import netlifyIdentity from "netlify-identity-widget"
-import { mapGetters, mapActions } from "vuex"
+import netlifyIdentity from 'netlify-identity-widget'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'IdentityForm',
   computed: {
-    ...mapGetters("user", {
-      isLoggedIn: "getUserStatus",
-      user: "getUser"
+    ...mapGetters({
+      isLoggedIn: 'getUserStatus',
+      user: 'getUser'
     }),
-    username() {
-      return this.user ? this.user.username : ", there!";
+    username () {
+      return this.user ? this.user.username : ', there!'
     }
   },
   data () {
@@ -41,11 +41,11 @@ export default {
     }
   },
   methods: {
-    ...mapActions("user", {
-      updateUser: "updateUser"
+    ...mapActions({
+      updateUser: 'updateUser'
     }),
-    triggerNetlifyIdentityAction(action) {
-      if (action == "login" || action == "signup") {
+    triggerNetlifyIdentityAction (action) {
+      if (action === 'login' || action === 'signup') {
         netlifyIdentity.open(action)
         netlifyIdentity.on(action, user => {
           this.currentUser = {
@@ -55,19 +55,22 @@ export default {
             expires_at: user.token.expires_at,
             refresh_token: user.token.refresh_token,
             token_type: user.token.token_type
-          };
+          }
           this.updateUser({
             currentUser: this.currentUser
           })
+          let theUser = JSON.stringify(this.currentUser)
+          localStorage.setItem('user', theUser)
           netlifyIdentity.close()
         })
         console.log(this.currentUser)
         console.log(this.user)
-      } else if (action == "logout") {
+      } else if (action === 'logout') {
         this.currentUser = null
         this.updateUser({
           currentUser: this.currentUser
         })
+        localStorage.removeItem('user')
         netlifyIdentity.logout()
         this.$router.push('/account')
       }

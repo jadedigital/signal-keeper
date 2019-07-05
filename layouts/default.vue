@@ -132,6 +132,10 @@ export default {
       ]
       return items
     }
+  },
+  mounted: function () {
+    let theUser = window.localStorage.getItem('user')
+    this.$store.commit('setUser', theUser)
   }
 }
 </script>
