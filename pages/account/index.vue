@@ -6,7 +6,7 @@
           <div class="columns" v-if="isLoggedIn" v-cloak>
             <div class="one-half column centered">
               <div class="blankslate blankslate-clean-background">
-                <h3 v-text="user.user_metadata.full_name"></h3>
+                <h3 v-text="username"></h3>
                 <p>View and manage your account</p>
               </div>
             </div>
@@ -15,12 +15,6 @@
             <div class="one-half column centered" v-if="editing" v-cloak>
               <p>Edit Your Profile</p>
               <EditAccountForm />
-            </div>
-            <div class="one-half column centered" v-else>
-              <div v-if="account" v-cloak>
-                <p>Information pulled from the firebase <code>/account</code> dataset</p>
-                <pre v-text="`${JSON.stringify(account, null, 2)}`"></pre>
-              </div>
             </div>
             <v-card-actions>
               <v-spacer></v-spacer>
@@ -52,8 +46,8 @@ export default {
       isLoggedIn: 'getUserStatus',
       user: 'getUser'
     }),
-    imageAlt () {
-      return `Profile image for ${this.account.displayName}`
+    username () {
+      return this.user ? this.user.username : ', there!'
     }
   },
   data () {
