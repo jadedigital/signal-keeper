@@ -3,15 +3,10 @@
     <v-flex xs6 offset-xs3>
       <v-card class="mt-5">
         <div class="ma-3">
-          <div class="columns" v-if="account" v-cloak>
+          <div class="columns" v-if="isLoggedIn" v-cloak>
             <div class="one-half column centered">
               <div class="blankslate blankslate-clean-background">
-                <div class="profile-image centered">
-                  <a v-bind:href="account.image" class="d-inline-block" target="_blank" title="Click To View">
-                    <img v-bind:src="account.image" width="100" height="100" v-bind:alt="imageAlt" />
-                  </a>
-                </div>
-                <h3 v-text="account.displayName"></h3>
+                <h3 v-text="user.user_metadata.full_name"></h3>
                 <p>View and manage your account</p>
               </div>
             </div>
@@ -43,8 +38,9 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import EditAccountForm from '~/components/account/EditAccountForm.vue'
+import netlifyIdentity from 'netlify-identity-widget'
 
 export default {
   // middleware: 'authenticated', // checking if auth'd with firebase kinda sucks as the middleware is triggered before firebase is ready
@@ -52,10 +48,10 @@ export default {
     EditAccountForm
   },
   computed: {
-    ...mapState([
-      'user',
-      'account'
-    ]),
+    ...mapGetters({
+      isLoggedIn: 'getUserStatus',
+      user: 'getUser'
+    }),
     imageAlt () {
       return `Profile image for ${this.account.displayName}`
     }
@@ -66,13 +62,20 @@ export default {
     }
   },
   methods: {
+    ...mapActions({
+      updateUser: 'updateUser'
+    }),
     toggleEditForm () {
       this.editing = !this.editing
     },
     signOut () {
-      this.$store.dispatch('userLogout')
+      this.updateUser({
+        currentUser: null
+      })
         .then(() => {
-          this.$router.push('/account/login')
+          localStorage.removeItem('user')
+          netlifyIdentity.logout()
+          this.$router.push('/')
         })
         .catch((error) => {
           console.log(error)

@@ -59,20 +59,7 @@
         </v-list-tile>
         <v-list-tile
           router
-          :to="'/inspire'"
-          v-if="user"
-          exact
-        >
-          <v-list-tile-action>
-            <v-icon v-html="'build'"></v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="'Maintenance Request'"></v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-list-tile
-          router
-          :to="'/inspire'"
+          :to="'/expense'"
           v-if="user"
           exact
         >
@@ -80,7 +67,20 @@
             <v-icon v-html="'assignment'"></v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title v-text="'Receipts'"></v-list-tile-title>
+            <v-list-tile-title v-text="'Add Expense'"></v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile
+          router
+          :to="'/account/login'"
+          v-if="!isLoggedIn"
+          exact
+        >
+          <v-list-tile-action>
+            <v-icon v-html="'person'"></v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title v-text="'Login'"></v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -108,7 +108,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   data () {
@@ -122,9 +122,10 @@ export default {
     }
   },
   computed: {
-    ...mapState([
-      'user'
-    ]),
+    ...mapGetters({
+      isLoggedIn: 'getUserStatus',
+      user: 'getUser'
+    }),
     items () {
       var items = [
         { icon: 'apps', title: 'Welcome', to: '/', auth: true },
