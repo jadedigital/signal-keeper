@@ -70,19 +70,6 @@
             <v-list-tile-title v-text="'Add Expense'"></v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile
-          router
-          :to="'/account/login'"
-          v-if="!isLoggedIn"
-          exact
-        >
-          <v-list-tile-action>
-            <v-icon v-html="'person'"></v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="'Login'"></v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
       </v-list>
     </v-navigation-drawer>
     <v-toolbar class="signal-toolbar" color="secondary" flat fixed app :clipped-left="clipped">
