@@ -70,10 +70,7 @@
           </v-list-tile-content>
         </v-list-tile>
         <v-list-tile
-          router
-          :to="'/admin'"
-          v-if="user"
-          exact
+          :href="'/admin'"
         >
           <v-list-tile-action>
             <v-icon v-html="'home'"></v-icon>
