@@ -71,6 +71,7 @@
         </v-list-tile>
         <v-list-tile
           :href="'/admin'"
+          v-if="user"
         >
           <v-list-tile-action>
             <v-icon v-html="'home'"></v-icon>
