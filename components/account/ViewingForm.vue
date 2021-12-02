@@ -14,12 +14,14 @@
             <v-text-field
               v-model="property"
               label="Rental Property Address"
+              :rules="[v => !!v || 'Property is required']"
               name="propertyAddress"
               required
             ></v-text-field>
             <v-text-field
               v-model="yourName"
               label="Your Name"
+              :rules="[v => !!v || 'Name is required']"
               name="applicantName"
               required
             ></v-text-field>
@@ -41,6 +43,7 @@
             <v-select
               v-model="requestedTime"
               :items="requestedTimeItems"
+              :rules="[v => !!v || 'Time is required']"
               label="Requested Time"
               :item-value="requestedTime"
             ></v-select>
@@ -59,6 +62,7 @@
                 v-model="date"
                 name="requestedDate"
                 label="Requested Date"
+                :rules="[v => !!v || 'Date is required']"
                 prepend-icon="event"
                 readonly
                 required
@@ -149,8 +153,9 @@ export default {
       this.$refs.form.reset()
     },
     allowedDates (val) {
-      let dayOfWeek = new Date(Date.parse(val))
-      let bool = (dayOfWeek !== 6 || dayOfWeek !== 0)
+      let from = (val).split("-")
+      let dayOfWeek = new Date(from[0], from[1] - 1, from[2])
+      let bool = (dayOfWeek.getDay() !== 6 && dayOfWeek.getDay() !== 0)
       return bool
     },
   }

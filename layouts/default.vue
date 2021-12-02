@@ -22,11 +22,11 @@
         </v-list-tile>
         <v-list-tile
           router
-          :to="'/apply'"
+          :to="'/viewing'"
           exact
         >
           <v-list-tile-action>
-            <v-icon v-html="'account-eye'"></v-icon>
+            <v-icon v-html="'account_view'"></v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title v-text="'Apply for a Viewing'"></v-list-tile-title>
@@ -34,7 +34,7 @@
         </v-list-tile>
         <v-list-tile
           router
-          :to="'/viewing'"
+          :to="'/apply'"
           exact
         >
           <v-list-tile-action>
