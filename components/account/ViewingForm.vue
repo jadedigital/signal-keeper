@@ -59,7 +59,7 @@
             >
               <v-text-field
                 slot="activator"
-                v-model="date"
+                v-model="requestedDay"
                 name="requestedDate"
                 label="Requested Date"
                 :rules="[v => !!v || 'Date is required']"
@@ -135,17 +135,12 @@ export default {
     },
     minDate () {
       const currentDate = new Date()
-      const year = currentDate.getFullYear()
-      const month = currentDate.getMonth() + 1
-      const day = currentDate.getDate()
-      return (year + '-' + month + '-' + day)
+      return (currentDate.toISOString().split('T')[0])
     },
     maxDate () {
       const currentDate = new Date()
-      const year = currentDate.getMonth() === 11 ? currentDate.getFullYear() + 1 : currentDate.getFullYear()
-      const month = currentDate.getMonth() === 11 ? 1 : currentDate.getMonth() + 1
-      const day = currentDate.getDate()
-      return (year + '-' + month + '-' + day)
+      currentDate.setDate(currentDate.getDate() + 14)
+      return (currentDate.toISOString().split('T')[0])
     }
   },
   methods: {
