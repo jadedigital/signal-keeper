@@ -26,6 +26,18 @@
           exact
         >
           <v-list-tile-action>
+            <v-icon v-html="'account-eye'"></v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title v-text="'Apply for a Viewing'"></v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile
+          router
+          :to="'/viewing'"
+          exact
+        >
+          <v-list-tile-action>
             <v-icon v-html="'assignment_ind'"></v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
@@ -99,7 +111,7 @@
       </v-container>
     </v-content>
     <v-footer :fixed="fixed" app>
-      <span class="ml-3">&copy; Signal Property Management Inc. 2019</span>
+      <span class="ml-3">&copy; Signal Property Management Inc. {{year}}</span>
     </v-footer>
   </v-app>
 </template>
@@ -129,6 +141,11 @@ export default {
         { icon: 'bubble_chart', title: 'Inspire', to: '/inspire', auth: typeof this.user !== typeof null }
       ]
       return items
+    },
+    year () {
+      var currentTime = new Date()
+      var year = currentTime.getFullYear()
+      return year
     }
   },
   mounted: function () {
