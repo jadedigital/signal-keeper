@@ -26,7 +26,7 @@
           exact
         >
           <v-list-tile-action>
-            <v-icon v-html="'show'"></v-icon>
+            <v-icon v-html="'preview'"></v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title v-text="'Apply for a Viewing'"></v-list-tile-title>

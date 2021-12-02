@@ -36,6 +36,7 @@
               v-model="yourPhone"
               label="Phone Number"
               name="applicantPhone"
+              :rules="[v => !!v || 'Phone number is required']"
               :mask="phoneMask"
               prepend-icon="phone"
               required
