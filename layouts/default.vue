@@ -29,7 +29,7 @@
             <v-icon v-html="'preview'"></v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title v-text="'Apply for a Viewing'"></v-list-tile-title>
+            <v-list-tile-title v-text="'Request a Viewing'"></v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
         <v-list-tile

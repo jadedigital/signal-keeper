@@ -39,6 +39,14 @@ module.exports = {
   plugins: [
     '~/plugins/vuetify.js'
   ],
+
+  pwa: {
+    manifest: {
+      name: 'Signal Property Management Portal',
+      short_name: 'Signal',
+      description: 'This site manages tenant applications, rental agreements, maintenance requests'
+    }
+  },
   /*
   ** Build configuration
   */

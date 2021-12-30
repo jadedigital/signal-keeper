@@ -1,8 +1,8 @@
 {
-  "name": "nuxt-firebase-auth",
+  "name": "signal-keeper",
   "version": "1.0.0",
-  "description": "An example of using Nuxt with Firebase to auth users without a server",
-  "author": "james2doyle <james2doyle@gmail.com>",
+  "description": "Signal Property Management Portal",
+  "author": "agreene@signalmanagement.ca",
   "private": true,
   "scripts": {
     "dev": "nuxt",
