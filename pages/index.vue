@@ -9,7 +9,7 @@
         <v-card-text>
           <p>This site manages tenant applications, rental agreements, maintenance requests, and payment receipts</p>
           <p>For more information on Signal Property Management, check out our <a href="https://signalmanagement.ca" target="_blank">website</a>.</p>
-          <p>Thank you for using Signal Management, we look forward to serving you property management needs.</p>
+          <p>Thank you for using Signal Management, we look forward to serving your property management needs.</p>
           <div class="text-xs-right">
             <em><small>&mdash; Signal Management Team</small></em>
           </div>
